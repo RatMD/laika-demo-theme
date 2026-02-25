@@ -1,0 +1,16 @@
+<template>
+    <div class="navbar-mobile">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="text-end">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="bi bi-x-circle"></span>
+                </button>
+            </div>
+            <SiteNavLinks class="nav flex-column mb-2 mb-lg-0" />
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import SiteNavLinks from './SiteNavLinks.vue';
+</script>

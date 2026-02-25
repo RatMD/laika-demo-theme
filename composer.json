@@ -1,0 +1,31 @@
+{
+    "name": "ratmd/laika-demo-theme",
+    "type": "october-theme",
+    "description": "Demo October CMS theme, written for LAIKA.",
+    "keywords": ["october", "cms", "demo", "theme"],
+    "authors": [
+        {
+            "name": "Sam",
+            "email": "sam@rat.md"
+        },
+        {
+            "name": "Alexey Bobkov",
+            "email": "aleksey.bobkov@gmail.com",
+            "role": "Co-founder"
+        },
+        {
+            "name": "Samuel Georges",
+            "email": "daftspunky@gmail.com",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
