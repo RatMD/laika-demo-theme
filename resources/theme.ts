@@ -9,7 +9,7 @@ import DayjsDirective from "@/resources/directives/dayjs";
  */
 async function main() {
     createLaikaApp({
-        title(title: string) { return title; },
+        title(title: string) { return `October CMS${title ? (' - ' + title) : ''}`; },
         resolve(name: string) {
             name = (name.endsWith('.vue') ? name.slice(0, -4) : name).toLowerCase();
 

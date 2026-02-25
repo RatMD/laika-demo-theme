@@ -6,15 +6,22 @@ description = "Blog layout"
 [sitePicker]
 eager[] = isEnabled
 
-[resources]
-meta[author] = "October CMS"
-meta[generator] = "October CMS"
-
 [section footerNav]
 eager[] = items.toNested
 handle = "Site\Menus"
 identifier = "slug"
 value = "footer-nav"
+
+[collection blogCategories]
+handle = "Blog\Category"
+
+[global blogConfig]
+handle = "Blog\Config"
+
+[resources]
+meta[author] = "October CMS"
+meta[generator] = "October CMS"
+vars[activeNavLink] = "blog"
 </october>
 
 <template>

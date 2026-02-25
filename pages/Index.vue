@@ -5,10 +5,10 @@ layout = "Home.vue"
 meta_title = "Welcome"
 
 [collection blog]
+handle = "Blog\Post"
 as = posts
 relations[] = categories
 relations[] = author
-handle = "Blog\Post"
 </october>
 
 <template>

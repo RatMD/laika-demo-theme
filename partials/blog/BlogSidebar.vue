@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { Link } from '@ratmd/laika';
-
-</script>
-
 <october>
 {% set archiveDates = blog
     .selectRaw("count(*) as post_count, published_at_month, published_at_year")
@@ -29,7 +24,7 @@ import { Link } from '@ratmd/laika';
     </div>
 
     <div class="sidebar-social">
-        {% partial 'elements/social-links' links=blogConfig.social_links showRssLink=true %}
+        <SocialLinks :links="$components?.blogConfig.get('social_links', [])" :show-rss-link="true" />
     </div>
 
     <div v-if="$components.has('blogCategories')" class="sidebar-categories">
@@ -37,26 +32,32 @@ import { Link } from '@ratmd/laika';
         <ul class="bullet-list">
             <li v-for="category of $components?.blogCategories.get('items')" :key="category.id"
                 :class="{ 'active': $shared?.activeBlogCategory == category.slug }">
-                <Link page="blog/category" :args="{ slug: category.slug, id: category.id }">
+                <Link page="blog/category" :params="{ slug: category.slug, id: category.id }">
                     {{ category.title }}
                 </Link>
             </li>
         </ul>
     </div>
 
-    <div class="sidebar-archives">
+    <!-- @todo -->
+    <div v-if="false" class="sidebar-archives">
         <h3>Archives</h3>
         <ul class="bullet-list">
             {% for date in archiveDates %}
                 {% if date.published_at_year %}
                     {% set dateParsed = date('1-'~date.published_at_month~'-'~date.published_at_year) %}
                     <li>
-                        <a
-                            href="{{ 'blog/archive'|page({ month: date.published_at_month, year: date.published_at_year }) }}"
-                        >dateParsed|date('F Y')</a>
+                        <a href="{{ 'blog/archive'|page({ month: date.published_at_month, year: date.published_at_year }) }}">
+                            dateParsed|date('F Y')
+                        </a>
                     </li>
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
 </template>
+
+<script lang="ts" setup>
+import { Link } from '@ratmd/laika';
+import SocialLinks from '@/partials/elements/SocialLinks.vue';
+</script>

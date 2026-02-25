@@ -1,4 +1,7 @@
 {
     "version": 1,
-    "keys": []
+    "keys": [
+        "system::lang.pagination.next",
+        "system::lang.pagination.previous"
+    ]
 }

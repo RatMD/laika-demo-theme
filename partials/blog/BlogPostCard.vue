@@ -47,11 +47,19 @@
     </div>
 </template>
 
+<script lang="ts">
+export interface ComponentProps {
+    post: any;
+    cssClass?: string;
+    bannerCss?: string;
+}
+</script>
+
 <script lang="ts" setup>
 import { computed } from 'vue';
 
 // Define Component
-const props = defineProps<{ post: any, cssClass: string, bannerCss: string }>();
+const props = defineProps<ComponentProps>();
 
 // States
 const randomImage = computed<string>(() => {
