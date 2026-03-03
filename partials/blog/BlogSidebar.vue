@@ -47,7 +47,7 @@
                 {% if date.published_at_year %}
                     {% set dateParsed = date('1-'~date.published_at_month~'-'~date.published_at_year) %}
                     <li>
-                        <a href="{{ 'blog/archive'|page({ month: date.published_at_month, year: date.published_at_year }) }}">
+                        <a href="$october.page('blog/archive', { month: date.published_at_month, year: date.published_at_year })">
                             dateParsed|date('F Y')
                         </a>
                     </li>

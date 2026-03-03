@@ -1,8 +1,16 @@
 import './styles/theme.css';
+import * as bootstrap from 'bootstrap';
 
 import { createApp, h } from "vue";
 import { createLaikaApp, type ResolveResult } from "@ratmd/laika";
 import DayjsDirective from "@/resources/directives/dayjs";
+
+declare global {
+    interface Window {
+        bootstrap: typeof bootstrap;
+    }
+}
+window.bootstrap = bootstrap;
 
 /**
  * Main Application Runtime

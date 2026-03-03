@@ -6,17 +6,17 @@ description = "Blog layout"
 [sitePicker]
 eager[] = isEnabled
 
-[section footerNav]
-eager[] = items.toNested
-handle = "Site\Menus"
-identifier = "slug"
-value = "footer-nav"
-
 [collection blogCategories]
 handle = "Blog\Category"
 
 [global blogConfig]
 handle = "Blog\Config"
+
+[section footerNav]
+eager[] = items.toNested
+handle = "Site\Menus"
+identifier = "slug"
+value = "footer-nav"
 
 [resources]
 meta[author] = "October CMS"

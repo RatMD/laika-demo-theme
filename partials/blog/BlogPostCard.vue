@@ -9,13 +9,13 @@
                     <div class="blog-post-categories">
                         <ul class="list-inline">
                             <li v-for="category in post.categories" :key="category.id" class="list-inline-item">
-                                &mdash; <a :href="$october.page('blog/category', { slug: category.slug, id: category.id })">{{ category.title }}</a>
+                                &mdash; <a :href="$october.page('blog/category', { slug: category.slug, id: category.id })" class="position-relative z-3">{{ category.title }}</a>
                             </li>
                         </ul>
                     </div>
                 </template>
 
-                <h4 class="card-title">
+                <h4 class="position-relative card-title">
                     <a :href="$october.page('blog/post', { slug: post.slug, id: post.id })" class="stretched-link">
                         {{ props.post.title }}
                     </a>
@@ -36,7 +36,7 @@
                             &bull;
                         </div>
                         <div class="meta-item meta-author text-icon text-icon-author">
-                            By <a :href="$october.page('blog/author', { slug: post.author.slug })">
+                            By <a :href="$october.page('blog/author', { slug: post.author.slug })" class="position-relative z-3 ">
                                 {{ post.author.title || '' }}
                             </a>
                         </div>

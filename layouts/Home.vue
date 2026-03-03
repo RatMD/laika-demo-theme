@@ -1,21 +1,21 @@
 <october>
-description = "Default layout"
+description = "Home layout"
 
 [backendLink]
 
 [sitePicker]
 eager[] = isEnabled
 
-[resources]
-meta[author] = "October CMS"
-meta[generator] = "October CMS"
-vars[activeNavLink] = 'home'
-
 [section footerNav]
 eager[] = items.toNested
 handle = "Site\Menus"
 identifier = "slug"
 value = "footer-nav"
+
+[resources]
+meta[author] = "October CMS"
+meta[generator] = "October CMS"
+vars[activeNavLink] = 'home'
 </october>
 
 <template>
