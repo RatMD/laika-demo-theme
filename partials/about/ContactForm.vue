@@ -53,9 +53,8 @@ export interface PartialProps {
 
 // Define Component
 const props = defineProps<PartialProps>();
-</script>
 
-<script lang="php">
+    /*
 // How to activate this form:
 //
 // - 1. Open Admin Panel → Settings → Team → Manage Groups
@@ -98,4 +97,5 @@ function onSubmitContactForm()
     $this['isSubmit'] = true;
     $this['emailAddress'] = post('email');
 }
+*/
 </script>

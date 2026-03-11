@@ -1,12 +1,9 @@
-<october>
-</october>
-
 <template>
     <div class="block-scoreboard-metrics mt-3">
         <div class="container">
             <div class="metrics d-flex justify-content-between">
                 <div v-for="(metric, idx) in (props.block.metrics||[])" :key="idx" class="metric">
-                    <img :src="laika.october.theme('assets/images/icons/icon-' + (metric.icon || 'notepad') + '.png')" width="42" alt="" />
+                    <img :src="october.theme('resources/images/icons/icon-' + (metric.icon || 'notepad') + '.png')" width="42" alt="" />
                     <h3>{{ metric.number }}</h3>
                     <p>{{ metric.description }}</p>
                 </div>

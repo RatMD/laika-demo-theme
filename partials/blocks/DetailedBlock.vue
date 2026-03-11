@@ -28,20 +28,21 @@
 
 <script lang="ts" setup>
 import type { Block } from '@/types';
-import { useLaika } from '@ratmd/laika';
+import { useOctober } from '@ratmd/laika';
+import { computed } from 'vue';
 
 // Define Component
 const props = defineProps<{ block: Block }>();
 
 // Composables
-const { october } = useLaika();
+const october = useOctober();
 
 // States
 const blockImage = computed<string>(() => {
     if (props.block.image) {
         return october.media(props.block.image);
     } else {
-        return october.theme('assets/images/blocks/team.png');
+        return october.theme('resources/images/blocks/team.png');
     }
 });
 </script>

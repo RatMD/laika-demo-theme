@@ -29,9 +29,6 @@ import UserPanelTeam from '@/partials/elements/UserPanelTeam.vue';
 
 // Define Component
 const props = defineProps<{ block: BlockWithMembers }>();
-
-// Composables
-registerTeamLeaders();
 </script>
 
 <style type="css" scoped>
