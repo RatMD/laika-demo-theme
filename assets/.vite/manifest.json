@@ -1,6 +1,6 @@
 {
-  "_vendor-ns54jF4c.js": {
-    "file": "assets/vendor-ns54jF4c.js",
+  "_vendor-CXoIWCkt.js": {
+    "file": "assets/vendor-CXoIWCkt.js",
     "name": "vendor"
   },
   "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
@@ -31,6 +31,54 @@
     "file": "assets/slick-BlUtDIuC.woff",
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
+  "resources/images/avatars/avatar-1.png": {
+    "file": "assets/avatar-1-02fdy0Jr.png",
+    "src": "resources/images/avatars/avatar-1.png"
+  },
+  "resources/images/avatars/avatar-2.png": {
+    "file": "assets/avatar-2-BXhCfmX0.png",
+    "src": "resources/images/avatars/avatar-2.png"
+  },
+  "resources/images/avatars/avatar-3.png": {
+    "file": "assets/avatar-3-Bbt12mwj.png",
+    "src": "resources/images/avatars/avatar-3.png"
+  },
+  "resources/images/avatars/avatar-4.png": {
+    "file": "assets/avatar-4-D_fRVLCR.png",
+    "src": "resources/images/avatars/avatar-4.png"
+  },
+  "resources/images/avatars/avatar-5.png": {
+    "file": "assets/avatar-5-dy1LvvSb.png",
+    "src": "resources/images/avatars/avatar-5.png"
+  },
+  "resources/images/contact/team.png": {
+    "file": "assets/team-B4ddZmXC.png",
+    "src": "resources/images/contact/team.png"
+  },
+  "resources/images/homepage/about-page.png": {
+    "file": "assets/about-page-B2ersTLy.png",
+    "src": "resources/images/homepage/about-page.png"
+  },
+  "resources/images/homepage/header-image.png": {
+    "file": "assets/header-image-BHnGqmvp.png",
+    "src": "resources/images/homepage/header-image.png"
+  },
+  "resources/images/homepage/layouts-image.png": {
+    "file": "assets/layouts-image-C7XqbLoz.png",
+    "src": "resources/images/homepage/layouts-image.png"
+  },
+  "resources/images/homepage/pages-image.png": {
+    "file": "assets/pages-image-Z5l-Fh8K.png",
+    "src": "resources/images/homepage/pages-image.png"
+  },
+  "resources/images/homepage/partials-image.png": {
+    "file": "assets/partials-image-srKZlqhA.png",
+    "src": "resources/images/homepage/partials-image.png"
+  },
+  "resources/images/icons/icon-address.png": {
+    "file": "assets/icon-address-CmVa30sf.png",
+    "src": "resources/images/icons/icon-address.png"
+  },
   "resources/images/icons/icon-calendar.png": {
     "file": "assets/icon-calendar-B4rdxRhz.png",
     "src": "resources/images/icons/icon-calendar.png"
@@ -39,9 +87,17 @@
     "file": "assets/icon-collapse-kZTbvHXQ.png",
     "src": "resources/images/icons/icon-collapse.png"
   },
+  "resources/images/icons/icon-email.png": {
+    "file": "assets/icon-email-Cnxx5emK.png",
+    "src": "resources/images/icons/icon-email.png"
+  },
   "resources/images/icons/icon-pagination-arrow.png": {
     "file": "assets/icon-pagination-arrow-BbFZPQqS.png",
     "src": "resources/images/icons/icon-pagination-arrow.png"
+  },
+  "resources/images/icons/icon-phone.png": {
+    "file": "assets/icon-phone-CV9Nnfxz.png",
+    "src": "resources/images/icons/icon-phone.png"
   },
   "resources/images/icons/icon-search.png": {
     "file": "assets/icon-search-BdfxdYcZ.png",
@@ -59,47 +115,126 @@
     "file": "assets/icon-user-CJ0Petvh.png",
     "src": "resources/images/icons/icon-user.png"
   },
+  "resources/images/logo-leaf.png": {
+    "file": "assets/logo-leaf-B7KLxOS_.png",
+    "src": "resources/images/logo-leaf.png"
+  },
   "resources/images/logo.svg": {
-    "file": "assets/logo-s3S5vjY6.svg",
+    "file": "assets/logo-BlxpcTUx.svg",
     "src": "resources/images/logo.svg"
   },
+  "resources/images/social-icons-white/dribbble-white.png": {
+    "file": "assets/dribbble-white-pR2aNpd3.png",
+    "src": "resources/images/social-icons-white/dribbble-white.png"
+  },
+  "resources/images/social-icons-white/facebook-white.png": {
+    "file": "assets/facebook-white-DK0sYh85.png",
+    "src": "resources/images/social-icons-white/facebook-white.png"
+  },
+  "resources/images/social-icons-white/linkedin-white.png": {
+    "file": "assets/linkedin-white-CYPT9w2p.png",
+    "src": "resources/images/social-icons-white/linkedin-white.png"
+  },
+  "resources/images/social-icons-white/twitter-white.png": {
+    "file": "assets/twitter-white-9gMQ5q9f.png",
+    "src": "resources/images/social-icons-white/twitter-white.png"
+  },
+  "resources/images/social-icons/rss.png": {
+    "file": "assets/rss-dt9gdsRK.png",
+    "src": "resources/images/social-icons/rss.png"
+  },
+  "resources/images/stock/desks-cropped.png": {
+    "file": "assets/desks-cropped-DtMU5prB.png",
+    "src": "resources/images/stock/desks-cropped.png"
+  },
+  "resources/images/stock/desks.png": {
+    "file": "assets/desks-CEAKx06c.png",
+    "src": "resources/images/stock/desks.png"
+  },
+  "resources/images/stock/desktop.png": {
+    "file": "assets/desktop-Bfyeno_s.png",
+    "src": "resources/images/stock/desktop.png"
+  },
+  "resources/images/stock/doughnuts.png": {
+    "file": "assets/doughnuts-5OcmiMT3.png",
+    "src": "resources/images/stock/doughnuts.png"
+  },
+  "resources/images/stock/pancakes.png": {
+    "file": "assets/pancakes-CIHftERK.png",
+    "src": "resources/images/stock/pancakes.png"
+  },
+  "resources/images/stock/workspace.png": {
+    "file": "assets/workspace-BOzxo_l5.png",
+    "src": "resources/images/stock/workspace.png"
+  },
   "resources/images/waves/footer-blue-wave.svg": {
-    "file": "assets/footer-blue-wave-cddsC0F6.svg",
+    "file": "assets/footer-blue-wave-Dax06qCc.svg",
     "src": "resources/images/waves/footer-blue-wave.svg"
   },
   "resources/images/waves/footer-wave.svg": {
-    "file": "assets/footer-wave-CgqTgfLW.svg",
+    "file": "assets/footer-wave-DrE9GRMi.svg",
     "src": "resources/images/waves/footer-wave.svg"
   },
+  "resources/images/waves/header-wave.svg": {
+    "file": "assets/header-wave-ULptKq8S.svg",
+    "src": "resources/images/waves/header-wave.svg"
+  },
   "resources/theme.ts": {
-    "file": "assets/theme-DPC7-lJl.js",
+    "file": "assets/theme-BPvdCHl7.js",
     "name": "theme",
     "src": "resources/theme.ts",
     "isEntry": true,
     "imports": [
-      "_vendor-ns54jF4c.js"
+      "_vendor-CXoIWCkt.js"
     ],
     "css": [
-      "assets/theme-bpPmyIC5.css"
+      "assets/theme-BvXXcDPW.css"
     ],
     "assets": [
-      "assets/logo-s3S5vjY6.svg",
-      "assets/icon-tick-uBFXvSwh.png",
-      "assets/icon-calendar-B4rdxRhz.png",
-      "assets/icon-user-CJ0Petvh.png",
-      "assets/icon-pagination-arrow-BbFZPQqS.png",
+      "assets/logo-BlxpcTUx.svg",
+      "assets/dribbble-white-pR2aNpd3.png",
+      "assets/linkedin-white-CYPT9w2p.png",
+      "assets/twitter-white-9gMQ5q9f.png",
+      "assets/facebook-white-DK0sYh85.png",
+      "assets/avatar-1-02fdy0Jr.png",
+      "assets/avatar-2-BXhCfmX0.png",
+      "assets/avatar-3-Bbt12mwj.png",
+      "assets/avatar-4-D_fRVLCR.png",
+      "assets/avatar-5-dy1LvvSb.png",
+      "assets/rss-dt9gdsRK.png",
+      "assets/icon-address-CmVa30sf.png",
+      "assets/icon-email-Cnxx5emK.png",
+      "assets/icon-phone-CV9Nnfxz.png",
+      "assets/team-B4ddZmXC.png",
+      "assets/header-image-BHnGqmvp.png",
+      "assets/logo-leaf-B7KLxOS_.png",
+      "assets/layouts-image-C7XqbLoz.png",
+      "assets/pages-image-Z5l-Fh8K.png",
+      "assets/partials-image-srKZlqhA.png",
+      "assets/desks-cropped-DtMU5prB.png",
+      "assets/desks-CEAKx06c.png",
+      "assets/desktop-Bfyeno_s.png",
+      "assets/doughnuts-5OcmiMT3.png",
+      "assets/pancakes-CIHftERK.png",
+      "assets/workspace-BOzxo_l5.png",
+      "assets/header-wave-ULptKq8S.svg",
+      "assets/about-page-B2ersTLy.png",
       "assets/icon-share-C7u9eEeo.png",
-      "assets/footer-wave-CgqTgfLW.svg",
-      "assets/footer-blue-wave-cddsC0F6.svg",
-      "assets/icon-collapse-kZTbvHXQ.png",
-      "assets/icon-search-BdfxdYcZ.png",
       "assets/bootstrap-icons-mSm7cUeB.woff2",
       "assets/bootstrap-icons-BeopsB42.woff",
       "assets/ajax-loader-BcnMEykj.gif",
       "assets/slick-Bi9J8BMx.eot",
       "assets/slick-BlUtDIuC.woff",
       "assets/slick-DWzRxEMf.ttf",
-      "assets/slick-BlzDm7g2.svg"
+      "assets/slick-BlzDm7g2.svg",
+      "assets/icon-tick-uBFXvSwh.png",
+      "assets/icon-calendar-B4rdxRhz.png",
+      "assets/icon-user-CJ0Petvh.png",
+      "assets/icon-pagination-arrow-BbFZPQqS.png",
+      "assets/footer-wave-DrE9GRMi.svg",
+      "assets/footer-blue-wave-Dax06qCc.svg",
+      "assets/icon-collapse-kZTbvHXQ.png",
+      "assets/icon-search-BdfxdYcZ.png"
     ]
   }
 }
