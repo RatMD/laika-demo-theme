@@ -57,7 +57,7 @@ vars[blueFooterStyle] = 1
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        {% ajaxPartial 'about/contact-form' %}
+                        <ContactForm />
                         <div class="contactform-decoration-1"></div>
                         <div class="contactform-decoration-2"></div>
                     </div>
@@ -67,10 +67,66 @@ vars[blueFooterStyle] = 1
     </div>
 </template>
 
-
 <script lang="ts" setup>
 import DefaultLayout from '@/layouts/Default.vue';
+import ContactForm from '@/partials/about/ContactForm.vue';
 
 // Define Component
 defineOptions({ layout: DefaultLayout });
 </script>
+
+<style lang="css" scoped>
+.contactform {
+    text-align: center;
+    background: #f6f2ff;
+    padding: 70px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    > .container {
+        position: relative;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 45px;
+    }
+
+    p.lead {
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* Decorations */
+    .contactform-decoration-1,
+    .contactform-decoration-2 {
+        content: '';
+        border-radius: 100%;
+        background-color: #F4F7F8;
+        display: block;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .contactform-decoration-1 {
+        background-color: #fff;
+        width: 321px;
+        height: 321px;
+        left: -140px;
+        top: -140px;
+        opacity: .5;
+    }
+
+    .contactform-decoration-2 {
+        background-color: #fff;
+        width: 380px;
+        height: 380px;
+        right: -165px;
+        top: -180px;
+        opacity: .5;
+    }
+}
+</style>
