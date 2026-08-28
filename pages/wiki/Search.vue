@@ -1,6 +1,6 @@
 <october>
 url = "/wiki/search"
-layout = "Wiki.vue"
+layout = "Default.vue"
 title = "Search Wiki Articles"
 meta_title = "Search - Wiki"
 
@@ -24,7 +24,7 @@ vars[activeNavLink] = "wiki"
         </header>
         <div class="row">
             <div class="col-md-12">
-                <form class="mb-5">
+                <form class="mb-5" @submit.prevent="onSearch">
                     <div class="input-group">
                         <div class="form-control-search">
                             <input type="text" name="term" class="form-control" placeholder="Search" :value="searchTerm" />
@@ -37,9 +37,9 @@ vars[activeNavLink] = "wiki"
                     <div v-for="article in articles.data || []" :key="article.id" class="card mb-3">
                         <div class="card-body pb-0">
                             <h5 class="wiki-article-title">
-                                <a :href="$october.page('wiki/article', { fullslug: article.fullslug, id: article.id })">
+                                <Link page="wiki/article" :params="{ fullslug: article.fullslug, id: article.id }">
                                     {{ article.title }}
-                                </a>
+                                </Link>
                             </h5>
                             <div v-html="$october.htmlLimit(article.content || '', 250)"></div>
                         </div>
@@ -54,14 +54,36 @@ vars[activeNavLink] = "wiki"
 </template>
 
 <script lang="ts" setup>
-import { Head, useComponent } from '@ratmd/laika';
+import { Head, Link, useComponent, useOctober, useRouter } from '@ratmd/laika';
 import { computed } from 'vue';
-import WikiLayout from '@/layouts/Wiki.vue';
+import DefaultLayout from '@/layouts/Default.vue';
 import Pagination from '@/partials/Pagination.vue';
 
-defineOptions({ layout: WikiLayout });
+defineOptions({ layout: DefaultLayout });
 
 const wiki = useComponent('wiki');
+const october = useOctober();
+const router = useRouter();
 const searchTerm = computed(() => String(wiki.get('term', '')).trim());
 const articles = computed<any>(() => wiki.get('articles', { data: [], links: [] }));
+
+function onSearch(event: Event): void {
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLFormElement)) {
+        return;
+    }
+
+    const url = october.page('wiki/search', {}, false);
+    if (!url) {
+        return;
+    }
+
+    const term = String(new FormData(form).get('term') ?? '').trim();
+    const query = new URLSearchParams();
+    if (term) {
+        query.set('term', term);
+    }
+
+    void router.get(query.size ? `${url}?${query.toString()}` : url);
+}
 </script>

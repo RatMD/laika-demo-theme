@@ -192,7 +192,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "resources/theme.ts": {
-    "file": "assets/theme-Ai4uQKGb.js",
+    "file": "assets/theme-CgJkOzVY.js",
     "name": "theme",
     "src": "resources/theme.ts",
     "isEntry": true,
@@ -200,7 +200,7 @@
       "_vendor-B2CfrmGh.js"
     ],
     "css": [
-      "assets/theme-CXZotNip.css"
+      "assets/theme-BmxE9Ufs.css"
     ],
     "assets": [
       "assets/logo-s3S5vjY6.svg",

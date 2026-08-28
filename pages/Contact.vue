@@ -9,6 +9,51 @@ vars[activeNavLink] = 'contact'
 vars[blueFooterStyle] = 1
 </october>
 
+<php>
+// How to activate this form:
+//
+// - 1. Open Admin Panel → Settings → Team → Manage Groups
+// - 2. Create a New Group → Set Code field to "contact-team"
+// - 3. Select Users tab → Click Add Users
+// - 4. Click Save
+//
+function onSubmitContactForm(): void
+{
+    // Validate the form
+    // @see https://docs.octobercms.com/4.x/cms/features/validation.html
+    //
+    // - Argument 1 is the attributes and their rules
+    // - Argument 2 is custom error messages for each attribute rule (translated)
+    // - Argument 3 is custom names for each attribute (translated)
+    //
+    $data = Request::validate([
+        'first_name' => 'required|min:2|max:64',
+        'email' => 'required|email|min:2|max:64',
+        'comments' => 'required|min:5',
+    ], [
+        'comments' => ['required' => __("Please actually write something to us...")]
+    ], [
+        'first_name' => __("name"),
+    ]);
+
+    // Notify the 'contact-team' group with 'backend:contact-form' mail template
+    //
+    $group = \Backend\Models\UserGroup::where('code', 'contact-team')->first();
+    if (!$group) {
+        throw new ApplicationException(__("Sorry, this contact form is not enabled: We cannot receive emails at the moment, please try using another method."));
+    }
+
+    Mail::sendTo(
+        $group->users->pluck('full_name', 'email')->all(),
+        'backend:contact-form',
+        $data
+    );
+
+    $this['isSubmit'] = true;
+    $this['emailAddress'] = (string) post('email');
+}
+</php>
+
 <template>
     <div class="page-contact">
         <div class="container my-5 py-4">
@@ -57,7 +102,7 @@ vars[blueFooterStyle] = 1
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <ContactForm :is-submit="false" email-address="" />
+                        <ContactForm :is-submit="props.isSubmit" :email-address="props.emailAddress" />
                         <div class="contactform-decoration-1"></div>
                         <div class="contactform-decoration-2"></div>
                     </div>
@@ -73,6 +118,16 @@ import ContactForm from '@/partials/about/ContactForm.vue';
 
 // Define Component
 defineOptions({ layout: DefaultLayout });
+
+interface ContactPageProps {
+    isSubmit?: boolean;
+    emailAddress?: string;
+}
+
+const props = withDefaults(defineProps<ContactPageProps>(), {
+    isSubmit: false,
+    emailAddress: '',
+});
 </script>
 
 <style lang="css" scoped>

@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="props && props.links && props.links.length > 1" aria-label="Pagination">
+    <nav v-if="props.last_page > 1" aria-label="Pagination">
         <ul class="pagination">
             <li class="page-item first"
                 :class="{ disabled: isPrevDisabled }"

@@ -25,7 +25,6 @@
 
 <script lang="ts" setup>
 import type { BlockWithMembers } from '@/types';
-import $ from 'jquery';
 import 'slick-carousel';
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import UserPanelTeam from '@/partials/elements/UserPanelTeam.vue';

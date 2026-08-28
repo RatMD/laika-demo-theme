@@ -3,6 +3,18 @@ import { createApp, h } from "vue";
 import { createLaikaApp, type ResolveResult } from "@ratmd/laika";
 import DayjsDirective from "@/resources/directives/dayjs";
 
+/**
+ * Required for legacy October CMS demonstration code.
+ *
+ * We strongly recommend avoiding jQuery alongside Vue unless it is required
+ * for a legacy or third-party integration.
+ */
+import $ from 'jquery';
+
+Object.assign(window, {
+    $,
+    jQuery: $,
+});
 
 /**
  * Main Application Runtime

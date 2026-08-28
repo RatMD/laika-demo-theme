@@ -8,7 +8,7 @@
             <p>Please bear in mind we receive a lot of feedback, it may take several days to process and you may not receive a response.</p>
             <p class="mb-0">Not to worry though, we have your email <strong>{{ props.emailAddress }}</strong>, all feedback we receive will be read and action taken if needed.</p>
         </div>
-        <form v-else data-request="onSubmitContactForm" data-request-update="{ _self: true }" data-request-flash>
+        <form v-else data-request="onSubmitContactForm" data-request-flash>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-floating mb-3">
@@ -53,49 +53,4 @@ export interface PartialProps {
 
 // Define Component
 const props = defineProps<PartialProps>();
-
-    /*
-// How to activate this form:
-//
-// - 1. Open Admin Panel → Settings → Team → Manage Groups
-// - 2. Create a New Group → Set Code field to "contact-team"
-// - 3. Select Users tab → Click Add Users
-// - 4. Click Save
-//
-function onSubmitContactForm()
-{
-    // Validate the form
-    // @see https://docs.octobercms.com/4.x/cms/features/validation.html
-    //
-    // - Argument 1 is the attributes and their rules
-    // - Argument 2 is custom error messages for each attribute rule (translated)
-    // - Argument 3 is custom names for each attribute (translated)
-    //
-    $data = Request::validate([
-        'first_name' => 'required|min:2|max:64',
-        'email' => 'required|email|min:2|max:64',
-        'comments' => 'required|min:5',
-    ], [
-        'comments' => ['required' => __("Please actually write something to us...")]
-    ], [
-        'first_name' => __("name"),
-    ]);
-
-    // Notify the 'contact-team' group with 'backend:contact-form' mail template
-    //
-    $group = \Backend\Models\UserGroup::where('code', 'contact-team')->first();
-    if (!$group) {
-        throw new ApplicationException(__("Sorry, this contact form is not enabled: We cannot receive emails at the moment, please try using another method."));
-    }
-
-    Mail::sendTo(
-        $group->users->pluck('full_name', 'email')->all(),
-        'backend:contact-form',
-        $data
-    );
-
-    $this['isSubmit'] = true;
-    $this['emailAddress'] = post('email');
-}
-*/
 </script>

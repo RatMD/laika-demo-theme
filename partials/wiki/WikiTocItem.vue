@@ -2,9 +2,10 @@
     <li :class="[{ collapsible: hasChildren, active: isActive }]">
         <a v-if="hasChildren" :href="`#tocItem${article.id}`" :class="{ 'collapse-caret': true, collapsed: !isExpanded }" data-bs-toggle="collapse"></a>
 
-        <a class="mb-1 d-block label" :href="$october.page('wiki/article', { fullslug: article.fullslug, id: article.id })">
+        <Link class="mb-1 d-block label" page="wiki/article"
+            :params="{ fullslug: article.fullslug, id: article.id }">
             {{ article.title }}
-        </a>
+        </Link>
 
         <ul v-if="hasChildren" :id="`tocItem${article.id}`" :class="{ 'collapse': true, show: isExpanded }">
             <WikiTocItem v-for="child in article.children" :key="child.id"
@@ -29,6 +30,7 @@ export interface ComponentProps {
 </script>
 
 <script lang="ts" setup>
+import { Link } from '@ratmd/laika';
 import { computed } from "vue";
 
 // Define Component

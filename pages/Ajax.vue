@@ -40,7 +40,7 @@ function onTest(): void
                             <div class="row">
                                 <div class="col-lg-9 control-panel">
                                     <div class="panel-body">
-                                        <form role="form" class="form-inline" data-request="onTest">
+                                        <form role="form" class="form-inline" @submit.prevent="calculate">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" value="15" name="value1" />
                                             </div>
@@ -74,7 +74,7 @@ function onTest(): void
                 <div class="row">
                     <div class="col-sm-8 offset-sm-2">
                         <h3>The Vue form</h3>
-                        <p>The familiar <code>data-request="onTest"</code> attribute is handled by LAIKA's delegated October AJAX bridge.</p>
+                        <p>The form prevents the native submit and sends its values through LAIKA's <code>useOctober().request()</code> API.</p>
                         <div class="code-block collapsed-code-block" :class="{ collapsed: !expandedForm }">
                             <pre>{{ formExample }}</pre>
                             <button type="button" class="expand-code" @click="expandedForm = !expandedForm">
@@ -82,7 +82,7 @@ function onTest(): void
                             </button>
                         </div>
 
-                        <h3>The Vue result component</h3>
+                        <h3>The LAIKA request and reactive result</h3>
                         <p>The response includes the changed October page variables. Vue receives the refreshed payload and updates the result component reactively, so no server-rendered HTML fragment is required.</p>
                         <div class="code-block">
                             <pre>{{ resultExample }}</pre>
@@ -107,7 +107,7 @@ function onTest(): void
 </template>
 
 <script lang="ts" setup>
-import { usePayload } from '@ratmd/laika';
+import { useOctober, usePayload } from '@ratmd/laika';
 import { computed, ref } from 'vue';
 import DefaultLayout from '@/layouts/Default.vue';
 import CalcResult from '@/partials/CalcResult.vue';
@@ -115,6 +115,7 @@ import CalcResult from '@/partials/CalcResult.vue';
 defineOptions({ layout: DefaultLayout });
 
 const { page } = usePayload<{ result?: string | number }>();
+const october = useOctober();
 const expandedForm = ref(false);
 const expandedHandler = ref(false);
 const result = computed<string | number>(() => {
@@ -123,17 +124,53 @@ const result = computed<string | number>(() => {
     return typeof value === "string" || typeof value === "number" ? value : 75;
 });
 
-const formExample = `<form data-request="onTest">
+async function calculate(event: Event): Promise<void> {
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLFormElement)) {
+        return;
+    }
+
+    await october.request('onTest', {
+        data: Object.fromEntries(new FormData(form)),
+    });
+}
+
+const formExample = `<form @submit.prevent="calculate">
     <input name="value1" value="15">
+    <label><input type="radio" name="operation" value="+">+</label>
+    <label><input type="radio" name="operation" value="-">-</label>
+    <label><input type="radio" name="operation" value="*" checked>*</label>
+    <label><input type="radio" name="operation" value="/">/</label>
     <input name="value2" value="5">
     <button type="submit">=</button>
 </form>`;
-const resultExample = '<CalcResult :result="result" />';
+const resultExample = `const october = useOctober();
+const { page } = usePayload<{ result?: string | number }>();
+
+const result = computed(() => page.value?.props?.result ?? 75);
+
+async function calculate(event: Event): Promise<void> {
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLFormElement)) {
+        return;
+    }
+
+    await october.request('onTest', {
+        data: Object.fromEntries(new FormData(form)),
+    });
+}`;
 const handlerExample = `function onTest(): void
 {
     $value1 = (float) input('value1', 0);
     $value2 = (float) input('value2', 0);
-    $this['result'] = $value1 * $value2;
+    $operation = (string) input('operation', '*');
+
+    $this['result'] = match ($operation) {
+        '+' => $value1 + $value2,
+        '-' => $value1 - $value2,
+        '*' => $value1 * $value2,
+        default => $value2 !== 0.0 ? round($value1 / $value2, 2) : 'NaN',
+    };
 }`;
 </script>
 
