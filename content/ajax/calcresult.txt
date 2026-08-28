@@ -1,1 +1,1 @@
-{{ result|default(75) }}
+<CalcResult :result="result" />

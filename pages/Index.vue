@@ -18,9 +18,10 @@ relations[] = author
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="jumbotron-intro">
-                            <h1>Welcome to October CMS!</h1>
+                            <h1>Welcome to LAIKA for October CMS!</h1>
                             <p class="lead">
-                                This is the October CMS demo theme that explores the core features. You can use it as a foundation for your new website.
+                                This is the October CMS demo theme that explores the core features, rewritten for LAIKA. 
+                                You can use it as a foundation for your new website.
                             </p>
                             <p>
                                 <a v-if="$components?.backendLink" :href="$components?.backendLink.get('backendUrl')" target="backend" class="btn btn-outline-light btn-pill">
@@ -35,7 +36,7 @@ relations[] = author
 
                     <div class="col-lg-6">
                         <div class="jumbotron-product">
-                            <img src="@/resources/images/homepage/header-image.png" class="img-fluid" alt="Product Shot" />
+                            <img src="@/assets/images/homepage/header-image.png" class="img-fluid" alt="Product Shot" />
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@ relations[] = author
 
         <div class="intro">
             <div class="container">
-                <img src="@/resources/images/logo-leaf.png" class="img-leaf" alt="October CMS" />
+                <img src="@/assets/images/logo-leaf.png" class="img-leaf" alt="October CMS" />
                 <h2>About This Page</h2>
                 <p class="lead">
                     This page demonstrates the basic CMS features. Usually each page built with October CMS is a combination of a layout, page, partials and content blocks, although in simple cases you can just use a page without anything else.
@@ -67,7 +68,7 @@ relations[] = author
                     </div>
                     <div class="col-lg-6">
                         <div class="feature-image">
-                            <img src="@/resources/images/homepage/layouts-image.png" class="img-fluid" alt="CMS Layouts" />
+                            <img src="@/assets/images/homepage/layouts-image.png" class="img-fluid" alt="CMS Layouts" />
                         </div>
                     </div>
                 </div>
@@ -79,7 +80,7 @@ relations[] = author
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="feature-image">
-                            <img src="@/resources/images/homepage/pages-image.png" class="img-fluid" alt="CMS Pages" />
+                            <img src="@/assets/images/homepage/pages-image.png" class="img-fluid" alt="CMS Pages" />
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -110,7 +111,7 @@ relations[] = author
                     </div>
                     <div class="col-lg-6">
                         <div class="feature-image">
-                            <img src="@/resources/images/homepage/partials-image.png" class="img-fluid" alt="CMS Layouts" />
+                            <img src="@/assets/images/homepage/partials-image.png" class="img-fluid" alt="CMS Layouts" />
                         </div>
                     </div>
                 </div>
@@ -156,6 +157,10 @@ const latestPosts = computed<any[]>(() => {
 </script>
 
 <style lang="css" scoped>
+.feature-pill {
+    margin: 25px 0;
+}
+
 .page-index {
     .jumbotron {
         background: linear-gradient(102.01deg, #DB6A26 0.3%, #DBB326 106.31%);
@@ -169,7 +174,7 @@ const latestPosts = computed<any[]>(() => {
             position: absolute;
             width: 100%;
             height: 186px;
-            background-image: url('@/resources/images/waves/header-wave.svg');
+            background-image: url('@/assets/images/waves/header-wave.svg');
             background-repeat: repeat-x;
             z-index: 1;
             bottom: -1px;
@@ -261,7 +266,7 @@ const latestPosts = computed<any[]>(() => {
     }
 
     .intro {
-        background-image: url('@/resources/images/homepage/about-page.png');
+        background-image: url('@/assets/images/homepage/about-page.png');
         background-repeat: no-repeat;
         background-position: bottom center;
         background-size: 1427px auto;

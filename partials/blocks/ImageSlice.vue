@@ -19,7 +19,7 @@ const heroImage = computed<string>(() => {
     if (props.block.image) {
         return october.media(props.block.image);
     } else {
-        return october.theme('resources/images/blocks/team.png');
+        return october.theme('assets/images/blocks/team.png');
     }
 });
 </script>
@@ -40,7 +40,7 @@ const heroImage = computed<string>(() => {
         height: 120px;
         width: 100%;
         z-index: 1;
-        background-image: url('../../images/blocks/landing-page-slice.svg');
+        background-image: url('@/assets/images/blocks/landing-page-slice.svg');
         background-repeat: no-repeat;
         background-position: left bottom;
         background-size: 100%;

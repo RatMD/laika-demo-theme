@@ -1,10 +1,3 @@
-<october>
-{% set archiveDates = blog
-    .selectRaw("count(*) as post_count, published_at_month, published_at_year")
-    .groupBy('published_at_month', 'published_at_year').get()
-%}
-</october>
-
 <template>
     <div class="sidebar-search">
         <form :action="$october.page('blog/search')" method="get">
@@ -27,7 +20,7 @@
         <SocialLinks :links="$components?.blogConfig.get('social_links', [])" :show-rss-link="true" />
     </div>
 
-    <div v-if="$components.has('blogCategories')" class="sidebar-categories">
+    <div v-if="$components?.blogCategories" class="sidebar-categories">
         <h3>Categories</h3>
         <ul class="bullet-list">
             <li v-for="category of $components?.blogCategories.get('items')" :key="category.id"
@@ -39,22 +32,6 @@
         </ul>
     </div>
 
-    <!-- @todo -->
-    <div v-if="false" class="sidebar-archives">
-        <h3>Archives</h3>
-        <ul class="bullet-list">
-            {% for date in archiveDates %}
-                {% if date.published_at_year %}
-                    {% set dateParsed = date('1-'~date.published_at_month~'-'~date.published_at_year) %}
-                    <li>
-                        <a href="$october.page('blog/archive', { month: date.published_at_month, year: date.published_at_year })">
-                            dateParsed|date('F Y')
-                        </a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
 </template>
 
 <script lang="ts" setup>

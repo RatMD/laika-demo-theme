@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="footer-brand">
-                        <img src="@/resources/images/logo.svg" alt="October CMS Demo" width="270" />
+                        <img src="@/assets/images/logo.svg" alt="October CMS Demo" width="270" />
                     </div>
                     <div class="footer-nav">
                         <SiteNavFooter />
@@ -17,22 +17,22 @@
                         <ul class="nav">
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="https://dribbble.com/" target="_blank">
-                                    <img src="@/resources/images/social-icons-white/dribbble-white.png" alt="Dribbble"  />
+                                    <img src="@/assets/images/social-icons-white/dribbble-white.png" alt="Dribbble"  />
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="https://www.linkedin.com/company/october-cms/" target="_blank">
-                                    <img src="@/resources/images/social-icons-white/linkedin-white.png" alt="LinkedIn"  />
+                                    <img src="@/assets/images/social-icons-white/linkedin-white.png" alt="LinkedIn"  />
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="https://twitter.com/octobercms" target="_blank">
-                                    <img src="@/resources/images/social-icons-white/twitter-white.png" alt="Twitter" />
+                                    <img src="@/assets/images/social-icons-white/twitter-white.png" alt="Twitter" />
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="https://www.facebook.com/octobercms" target="_blank">
-                                    <img src="@/resources/images/social-icons-white/facebook-white.png" alt="Facebook" />
+                                    <img src="@/assets/images/social-icons-white/facebook-white.png" alt="Facebook" />
                                 </a>
                             </li>
                         </ul>

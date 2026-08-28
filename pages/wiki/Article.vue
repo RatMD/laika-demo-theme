@@ -8,12 +8,17 @@ meta_title = "{{ wiki.title }}"
 handle = "Page\Article"
 identifier = "id"
 relations[] = external_links
+relations[] = banner
+relations[] = gallery
+relations[] = parent
+relations[] = parent.parent
+relations[] = parent.children
 </october>
 
 <template>
     <div class="container">
         <div class="py-3">
-            {% partial 'wiki/breadcrumb' article=article %}
+            <WikiBreadcrumb :article="article" />
         </div>
 
         <article class="wiki-article pb-3">
@@ -28,11 +33,11 @@ relations[] = external_links
             <div v-html="article.content" />
 
             <div class="wiki-article-gallery mb-3">
-                {% partial 'controls/gallery-slider' gallery=article.gallery %}
+                <GallerySlider :gallery="article.gallery || []" />
             </div>
         </article>
 
-        {% partial 'wiki/continue' article=article %}
+        <WikiContinue :article="article" />
 
         <template v-if="article.external_links && article.external_links.length > 0">
             <hr />
@@ -48,6 +53,9 @@ relations[] = external_links
 
 <script lang="ts" setup>
 import WikiLayout from '@/layouts/Wiki.vue';
+import GallerySlider from '@/partials/controls/GallerySlider.vue';
+import WikiBreadcrumb from '@/partials/wiki/WikiBreadcrumb.vue';
+import WikiContinue from '@/partials/wiki/WikiContinue.vue';
 import { useComponent } from '@ratmd/laika';
 import { computed } from 'vue';
 
@@ -60,7 +68,7 @@ const wiki = useComponent('wiki');
 // States
 const article = computed<any>(() => wiki.props);
 const randomImage = computed<string>(() => {
-    const images = import.meta.glob('@/resources/images/stock/*.png', {
+    const images = import.meta.glob('@/assets/images/stock/*.png', {
         eager: true,
         import: 'default'
     }) as Record<string, string>;
@@ -68,4 +76,3 @@ const randomImage = computed<string>(() => {
     return paths[Math.floor(Math.random() * paths.length)];
 });
 </script>
-

@@ -1,12 +1,12 @@
 <template>
     <li :class="[{ collapsible: hasChildren, active: isActive }]">
-        <a v-if="hasChildren" :href="`#tocItem${article.id}`" :class="{ 'collapse-caret': true, collapsed: !isActive }" data-bs-toggle="collapse"></a>
+        <a v-if="hasChildren" :href="`#tocItem${article.id}`" :class="{ 'collapse-caret': true, collapsed: !isExpanded }" data-bs-toggle="collapse"></a>
 
         <a class="mb-1 d-block label" :href="$october.page('wiki/article', { fullslug: article.fullslug, id: article.id })">
             {{ article.title }}
         </a>
 
-        <ul v-if="hasChildren" :id="`tocItem${article.id}`" :class="{ 'collapse': true, show: isActive }">
+        <ul v-if="hasChildren" :id="`tocItem${article.id}`" :class="{ 'collapse': true, show: isExpanded }">
             <WikiTocItem v-for="child in article.children" :key="child.id"
                 :article="child"
                 :activeSlug="activeSlug" />
@@ -37,4 +37,13 @@ const props = defineProps<ComponentProps>();
 // States
 const hasChildren = computed(() => !!props.article.children && props.article.children.length > 0);
 const isActive = computed(() => props.article.fullslug === props.activeSlug);
+const isExpanded = computed(() => containsActive(props.article, props.activeSlug));
+
+function containsActive(article: Article, activeSlug: string): boolean {
+    if (article.fullslug === activeSlug) {
+        return true;
+    }
+
+    return article.children?.some((child) => containsActive(child, activeSlug)) ?? false;
+}
 </script>

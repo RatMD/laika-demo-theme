@@ -25,8 +25,15 @@ export default defineConfig(() => {
     const theme = path.basename(__dirname);
 
     return {
-        base: `/themes/${theme}/assets/`,
-        publicDir: path.resolve(__dirname, 'assets'),
+        base: `/themes/${theme}/assets/build/`,
+        publicDir: false,
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    silenceDeprecations: ["global-builtin"],
+                },
+            },
+        },
         plugins: [
             laika(),
             laravel({
@@ -44,7 +51,8 @@ export default defineConfig(() => {
         ],
         build: {
             manifest: true,
-            outDir: './assets/',
+            outDir: path.resolve(__dirname, 'assets/build'),
+            emptyOutDir: true,
             rollupOptions: {
                 output: {
                     manualChunks: (id: string) => id.includes('node_modules') ? 'vendor' : void 0

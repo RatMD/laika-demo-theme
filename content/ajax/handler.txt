@@ -1,21 +1,13 @@
-function onTest()
+function onTest(): void
 {
-    $value1 = input('value1');
-    $value2 = input('value2');
-    $operation = input('operation');
+    $value1 = (float) input('value1', 0);
+    $value2 = (float) input('value2', 0);
+    $operation = (string) input('operation', '*');
 
-    switch ($operation) {
-        case '+' : 
-            $this['result'] = $value1 + $value2;
-            break;
-        case '-' : 
-            $this['result'] = $value1 - $value2;
-            break;
-        case '*' : 
-            $this['result'] = $value1 * $value2;
-            break;
-        default : 
-            $this['result'] = $value2 != 0 ? round($value1 / $value2, 2) : 'NaN';
-            break;
-    }
+    $this['result'] = match ($operation) {
+        '+' => $value1 + $value2,
+        '-' => $value1 - $value2,
+        '*' => $value1 * $value2,
+        default => $value2 !== 0.0 ? round($value1 / $value2, 2) : 'NaN',
+    };
 }

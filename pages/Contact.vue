@@ -20,7 +20,7 @@ vars[blueFooterStyle] = 1
                     <div class="contact-options">
                         <div class="option mb-2 d-flex">
                             <div class="pe-3">
-                                <img src="@/resources/images/icons/icon-address.png" width="42" alt="" />
+                                <img src="@/assets/images/icons/icon-address.png" width="42" alt="" />
                             </div>
                             <div>
                                 <h3 class="my-1">Address</h3>
@@ -29,7 +29,7 @@ vars[blueFooterStyle] = 1
                         </div>
                         <div class="option mb-2 d-flex">
                             <div class="pe-3">
-                                <img src="@/resources/images/icons/icon-email.png" width="42" alt="" />
+                                <img src="@/assets/images/icons/icon-email.png" width="42" alt="" />
                             </div>
                             <div>
                                 <h3 class="my-1">Email</h3>
@@ -38,7 +38,7 @@ vars[blueFooterStyle] = 1
                         </div>
                         <div class="option mb-2 d-flex">
                             <div class="pe-3">
-                                <img src="@/resources/images/icons/icon-phone.png" width="42" alt="" />
+                                <img src="@/assets/images/icons/icon-phone.png" width="42" alt="" />
                             </div>
                             <div>
                                 <h3 class="my-1">Phone</h3>
@@ -48,7 +48,7 @@ vars[blueFooterStyle] = 1
                     </div>
                 </div>
                 <div class="col-lg-7 offset-lg-1">
-                    <img src="@/resources/images/contact/team.png" class="img-fluid" alt="Team Shot" />
+                    <img src="@/assets/images/contact/team.png" class="img-fluid" alt="Team Shot" />
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ vars[blueFooterStyle] = 1
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <ContactForm />
+                        <ContactForm :is-submit="false" email-address="" />
                         <div class="contactform-decoration-1"></div>
                         <div class="contactform-decoration-2"></div>
                     </div>

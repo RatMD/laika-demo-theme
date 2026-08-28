@@ -11,6 +11,7 @@ relations[] = author
 relations[] = author.social_links
 relations[] = banner
 relations[] = categories
+relations[] = gallery
 
 [collection blogCategories]
 handle = "Blog\Category"
@@ -30,14 +31,14 @@ vars[activeNavLink] = 'blog'
             </h1>
 
             <template v-if="post.entry_type">
-                {{ $october.md(post.content) }}
+                <OctoberFilter name="md" :value="post.content || ''" />
             </template>
             <template v-else>
                 <div class="" v-html="post.content" />
             </template>
 
             <div class="blog-post-gallery">
-                {% partial 'controls/gallery-slider' gallery=post.gallery %}
+                <GallerySlider :gallery="post.gallery || []" />
             </div>
 
             <div class="row pt-3">
@@ -89,7 +90,8 @@ import CommentForm from '@/partials/blog/CommentForm.vue';
 import CommentList from '@/partials/blog/CommentList.vue';
 import ShareButton from '@/partials/elements/ShareButton.vue';
 import UserPanelAuthor from '@/partials/elements/UserPanelAuthor.vue';
-import { useComponent } from '@ratmd/laika';
+import GallerySlider from '@/partials/controls/GallerySlider.vue';
+import { OctoberFilter, useComponent } from '@ratmd/laika';
 import { computed } from 'vue';
 
 // Define Component
@@ -101,7 +103,7 @@ const postItem = useComponent('post');
 // States
 const post = computed<any>(() => postItem.props || {});
 const randomImage = computed<string>(() => {
-    const images = import.meta.glob('@/resources/images/stock/*.png', {
+    const images = import.meta.glob('@/assets/images/stock/*.png', {
         eager: true,
         import: 'default'
     }) as Record<string, string>;

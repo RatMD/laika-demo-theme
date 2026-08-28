@@ -11,13 +11,13 @@ export interface Block {
 };
 
 export interface BlockWithMetrics extends Block {
-    metrics: {
+    metrics: Array<{
         icon?: string | null;
         number: string | number;
         description: string;
-    }
+    }>;
 }
 
 export interface BlockWithMembers extends Block {
-    members: Record<string, any>;
+    members: Array<Record<string, any>>;
 }

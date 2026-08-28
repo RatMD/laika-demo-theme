@@ -15,14 +15,14 @@ body, .element-footer {
         position: absolute;
         width: 100%;
         height: 106px;
-        background: url('../../images/waves/footer-wave.svg') repeat-x 0 0;
+        background: url('/assets/images/waves/footer-wave.svg') repeat-x 0 0;
         background-repeat: repeat-x;
         z-index: 1;
         top: -1px;
     }
 
     &.footer-bluezone:before {
-        background: url('../../images/waves/footer-blue-wave.svg') repeat-x 0 0;
+        background: url('/assets/images/waves/footer-blue-wave.svg') repeat-x 0 0;
     }
 
     > .container {

@@ -12,13 +12,18 @@
         <h3>Table of Contents</h3>
         <ul class="bullet-list">
             <WikiTocItem v-for="article in $components?.wikiNav.get('items', [])"
-                :key="article.id"
+                :key="(article as any).id"
                 :article="article"
-                active-slug="" />
+                :active-slug="activeSlug" />
         </ul>
     </div>
 </template>
 
 <script lang="ts" setup>
 import WikiTocItem from '@/partials/wiki/WikiTocItem.vue';
+import { useComponent } from '@ratmd/laika';
+import { computed } from 'vue';
+
+const wiki = useComponent('wiki');
+const activeSlug = computed(() => String(wiki.get('fullslug', '')));
 </script>

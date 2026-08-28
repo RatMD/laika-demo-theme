@@ -21,8 +21,8 @@ vars[activeNavLink] = 'blog'
 <template>
     {{ $october.setPlaceholder('pageTitle', `Articles from ${$components?.blog.get('month')} / ${$components?.blog.get('year')}`) }}
     <template v-if="$components?.blog.get('posts', [])">
-        <BlogPostCard v-for="post of $components?.blog.get('posts', []).data" :key="post.id" :post="post" banner-css="banner-lg" />
-        <Pagination v-bind="$components?.blog.get('posts', [])" />
+        <BlogPostCard v-for="post of $components?.blog.get('posts', [] as any).data" :key="post.id" :post="post" banner-css="banner-lg" />
+        <Pagination v-bind="$components?.blog.get('posts', [] as any)" />
     </template>
 </template>
 

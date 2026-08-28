@@ -36,7 +36,7 @@ const props = defineProps<ComponentProps>();
 
 // States
 const randomImage = computed<string>(() => {
-    const images = import.meta.glob('@/resources/images/avatars/*.png', {
+    const images = import.meta.glob('@/assets/images/avatars/*.png', {
         eager: true,
         import: 'default'
     }) as Record<string, string>;

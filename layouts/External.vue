@@ -39,4 +39,8 @@ description = "External layout"
 
 <script lang="ts" setup>
 import { Head, PageContent } from '@ratmd/laika';
+import SiteFlashMessages from '@/partials/site/SiteFlashMessages.vue';
+import SiteModalAjax from '@/partials/site/modals/SiteModalAjax.vue';
+import SiteModalAlertDialog from '@/partials/site/modals/SiteModalAlertDialog.vue';
+import SiteModalPasswordDialog from '@/partials/site/modals/SiteModalPasswordDialog.vue';
 </script>

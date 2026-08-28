@@ -20,30 +20,32 @@
                 {{ currentSite.name || 'Sites' }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li v-for="site in sitePicker.sites">
+                <li v-for="site in sites" :key="site.code">
                     <a :class="`dropdown-item ${currentSite.code == site.code ? 'active' : void 0}`" :href="site.url">{{ site.name }}</a>
                 </li>
                 <li v-if="$components?.backendLink?.props?.backendUrl"><hr class="dropdown-divider"></li>
                 <li v-if="$components?.backendLink?.props?.backendUrl">
-                    <a class="dropdown-item" :href="$components?.backendLink?.props?.backendUrl">Backend Area</a>
+                    <a class="dropdown-item" :href="String($components?.backendLink?.props?.backendUrl ?? '')">Backend Area</a>
                 </li>
             </ul>
         </li>
         <li v-else-if="$components?.backendLink?.props?.backendUrl" class="nav-item">
-            <a class="btn btn-outline-light" :href="$components?.backendLink?.props?.backendUrl" target="backend">Backend Area</a>
+            <a class="btn btn-outline-light" :href="String($components?.backendLink?.props?.backendUrl ?? '')" target="backend">Backend Area</a>
         </li>
     </ul>
 </template>
 
 <script lang="ts" setup>
-import { Link, useComponent } from '@ratmd/laika';
-import { ref, watch } from 'vue';
+import { Link, useComponent, usePayload } from '@ratmd/laika';
+import { computed, ref, watch } from 'vue';
 
 // Composable
 const sitePicker = useComponent('sitePicker');
+const { site } = usePayload() as ReturnType<typeof usePayload> & { site: { value: any } };
 
 // States
 const sites = ref<any[]>([]);
+const currentSite = computed<any>(() => site.value ?? {});
 
 // Watch sitePicker
 watch(() => sitePicker.props?.isEnabled, async (enabled) => {

@@ -1,4 +1,4 @@
-<form role="form" data-request="onTest" data-request-update="calcresult: '#result'">
+<form role="form" data-request="onTest">
     <input type="text" value="15" name="value1">
 
     <label><input type="radio" name="operation" value="+"> +</label>
@@ -10,5 +10,5 @@
     <button type="submit">=</button>
 </form>
 
-<!-- The result -->
-<div id="result">{% partial "calcresult" %}"</div>
+<!-- The result is reactive Vue state -->
+<CalcResult :result="result" />

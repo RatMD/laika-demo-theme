@@ -10,7 +10,7 @@
 
     <div class="container py-4">
         <div class="block-team-leaders">
-            <div data-control="team-leaders" class="team-leaders">
+            <div ref="sliderElement" class="team-leaders">
                 <div v-for="(member, idx) of (block.members||[])" :key="idx" class="team-member-container">
                     <div class="team-member card">
                         <div class="card-body">
@@ -25,13 +25,65 @@
 
 <script lang="ts" setup>
 import type { BlockWithMembers } from '@/types';
+import $ from 'jquery';
+import 'slick-carousel';
+import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import UserPanelTeam from '@/partials/elements/UserPanelTeam.vue';
 
 // Define Component
 const props = defineProps<{ block: BlockWithMembers }>();
+
+const sliderElement = ref<HTMLElement | null>(null);
+
+onMounted(async () => {
+    await nextTick();
+
+    if (!sliderElement.value) {
+        return;
+    }
+
+    $(sliderElement.value).slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    });
+});
+
+onBeforeUnmount(() => {
+    if (sliderElement.value && $(sliderElement.value).hasClass('slick-initialized')) {
+        $(sliderElement.value).slick('unslick');
+    }
+});
 </script>
 
-<style type="css" scoped>
+<style lang="css">
 .block-team-leaders {
     position: relative;
 

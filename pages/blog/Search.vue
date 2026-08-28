@@ -40,9 +40,9 @@ vars[activeNavLink] = 'blog'
 
                 <template v-if="$components?.blog.get('posts', [])">
                     <div class="blog-featured row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 pb-5">
-                        <BlogPostCard v-for="post of $components?.blog.get('posts', []).data" :key="post.id" :post="post" />
+                        <BlogPostCard v-for="post of $components?.blog.get('posts', [] as any).data" :key="post.id" :post="post" />
                     </div>
-                    <Pagination v-bind="$components?.blog.get('posts', [])" />
+                    <Pagination v-bind="$components?.blog.get('posts', [] as any)" />
                 </template>
             </div>
         </div>

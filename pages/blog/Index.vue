@@ -14,8 +14,8 @@ relations[] = author
 <template>
     {{ $october.setPlaceholder('pageTitle', $components?.blogConfig.get('blog_name') || 'Blog') }}
     <template v-if="$components?.blog.get('posts', [])">
-        <BlogPostCard v-for="post of $components?.blog.get('posts', []).data" :key="post.id" :post="post" banner-css="banner-lg" />
-        <Pagination v-bind="$components?.blog.get('posts', [])" />
+        <BlogPostCard v-for="post of $components?.blog.get('posts', [] as any).data" :key="post.id" :post="post" banner-css="banner-lg" />
+        <Pagination v-bind="$components?.blog.get('posts', [] as any)" />
     </template>
 </template>
 

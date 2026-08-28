@@ -23,7 +23,7 @@
 
 
 <script lang="ts" setup>
-import { Popover } from "bootstrap";
+import { Popover } from 'bootstrap';
 import { onMounted, onBeforeUnmount, ref } from "vue";
 
 // States
@@ -75,7 +75,7 @@ onBeforeUnmount(() => {
             height: 14px;
             background-repeat: no-repeat;
             background-size: 14px 14px;
-            background-image: url('@/resources/images/icons/icon-share.png');
+            background-image: url('@/assets/images/icons/icon-share.png');
         }
 
         &.btn-sm {
@@ -106,5 +106,13 @@ onBeforeUnmount(() => {
 }
 :global(.share-button-popover .nav-link > i) {
     margin-right: 5px;
+}
+:global(.popover) {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.1);
+}
+:global(.popover .popover-arrow) {
+    display: none;
 }
 </style>

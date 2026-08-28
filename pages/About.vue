@@ -23,7 +23,7 @@ vars[activeNavLink] = 'about'
     </Teleport>
 
     <main class="header-flush">
-        <template v-for="(block, idx) of $components?.aboutpage.get('blocks', [])" :key="idx">
+        <template v-for="(block, idx) of $components?.aboutpage.get('blocks', [] as any[])" :key="idx">
             <DetailedBlock v-if="block.content_group == 'detailed_block'" :block="block" />
             <ImageSlice v-if="block.content_group == 'image_slice'" :block="block" />
             <ParagraphBlock v-if="block.content_group == 'paragraph_block'" :block="block" />
@@ -42,5 +42,7 @@ import ScoreboardMetrics from '@/partials/blocks/ScoreboardMetrics.vue';
 import TeamLeaders from '@/partials/blocks/TeamLeaders.vue';
 
 // Define Component
-defineOptions({ layout: DefaultLayout });
+defineOptions({ layout: DefaultLayout, inheritAttrs: false });
+
+defineProps<{ activeNavLink?: string }>();
 </script>

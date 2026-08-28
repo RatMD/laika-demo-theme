@@ -26,7 +26,7 @@ const blockImage = computed<string>(() => {
     if (props.block.image) {
         return october.media(props.block.image);
     } else {
-        return october.theme('resources/images/blocks/chart.png');
+        return october.theme('assets/images/blocks/chart.png');
     }
 });
 </script>

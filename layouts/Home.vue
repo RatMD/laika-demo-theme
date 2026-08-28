@@ -27,7 +27,7 @@ vars[activeNavLink] = 'home'
     <nav id="layout-nav" class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" :href="$october.page('index')">
-                <img src="@/resources/images/logo.svg" alt="October CMS Demo" width="190" />
+                <img src="@/assets/images/logo.svg" alt="October CMS Demo" width="190" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,3 +64,21 @@ import SiteFooter from '@/partials/site/SiteFooter.vue';
 import SiteNavMobile from '@/partials/site/SiteNavMobile.vue';
 import SiteHowItsMade from '@/partials/site/SiteHowItsMade.vue';
 </script>
+
+<style lang="css">
+body.layout-home {
+    #layout-nav.navbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #layout-content {
+        padding-top: 0;
+    }
+}
+</style>

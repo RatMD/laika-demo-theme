@@ -34,7 +34,7 @@ vars[activeNavLink] = "blog"
         <nav id="layout-nav" class="navbar navbar-expand-lg navbar-dark">
             <div class="navbar-container container">
                 <a class="navbar-brand" :href="$october.page('index')">
-                    <img src="@/resources/images/logo.svg" alt="October CMS Demo" width="230" />
+                    <img src="@/assets/images/logo.svg" alt="October CMS Demo" width="230" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -97,3 +97,25 @@ import SiteFooter from '@/partials/site/SiteFooter.vue';
 import SiteNavMobile from '@/partials/site/SiteNavMobile.vue';
 import SiteHowItsMade from '@/partials/site/SiteHowItsMade.vue';
 </script>
+
+<style lang="css">
+body.layout-blog {
+    .sidebar-search {
+        padding-bottom: 40px;
+    }
+
+    .sidebar-about {
+        padding-bottom: 20px;
+        font-size: 16px;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .sidebar-social,
+    .sidebar-categories {
+        padding-bottom: 20px;
+    }
+}
+</style>

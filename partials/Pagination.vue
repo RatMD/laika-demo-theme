@@ -8,7 +8,7 @@
                 <span v-if="isPrevDisabled" class="page-link" aria-hidden="true">
                     &larr;
                 </span>
-                <a v-else class="page-link" :href="prevLink.url" rel="prev" :aria-label="$october.trans('system::lang.pagination.previous')">
+                <a v-else class="page-link" :href="prevLink.url ?? undefined" rel="prev" :aria-label="$october.trans('system::lang.pagination.previous')">
                     &larr;
                 </a>
             </li>
@@ -37,7 +37,7 @@
                 <span v-if="isNextDisabled" class="page-link" aria-hidden="true">
                     &rarr;
                 </span>
-                <a v-else class="page-link" :href="nextLink.url" rel="next" :aria-label="$october.trans('system::lang.pagination.next')">
+                <a v-else class="page-link" :href="nextLink.url ?? undefined" rel="next" :aria-label="$october.trans('system::lang.pagination.next')">
                     &rarr;
                 </a>
             </li>
