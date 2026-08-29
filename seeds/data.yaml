@@ -4,39 +4,39 @@
     file: seeds/data/blog/category.json
     attributes:
         file_format: json
-        blueprint_uuid: b022a74b-15e6-4c6b-9eb9-17efc5103543
+        blueprint_uuid: 4c55009c-55bb-4e41-bb93-73fb7d74df96
 -
     name: Blog Author Data
     class: Tailor\Models\RecordImport
     file: seeds/data/blog/author.json
     attributes:
         file_format: json
-        blueprint_uuid: 6947ff28-b660-47d7-9240-24ca6d58aeae
+        blueprint_uuid: debccd01-4cc5-4b89-93ce-404be0f12e3e
 -
     name: Blog Post Data
     class: Tailor\Models\RecordImport
     file: seeds/data/blog/post.json
     attributes:
         file_format: json
-        blueprint_uuid: edcd102e-0525-4e4d-b07e-633ae6c18db6
+        blueprint_uuid: 6590a340-2948-41b8-ac8f-54f388aa063c
 -
     name: Pages Data
     class: Tailor\Models\RecordImport
     file: seeds/data/pages/article.json
     attributes:
         file_format: json
-        blueprint_uuid: 339b11b7-69ad-43c4-9be1-6953e7738827
+        blueprint_uuid: d2eae4b8-c1b8-4b8c-a906-b14505256ed6
 -
     name: About Page Data
     class: Tailor\Models\RecordImport
     file: seeds/data/pages/about.json
     attributes:
         file_format: json
-        blueprint_uuid: a63fabaf-7c0b-4c74-b36f-7abf1a3ad1c1
+        blueprint_uuid: bf0f7463-cace-4949-ac6d-7d5ae88233b3
 -
     name: Menu Data
     class: Tailor\Models\RecordImport
     file: seeds/data/site/menus.json
     attributes:
         file_format: json
-        blueprint_uuid: 85e471d2-09b9-4f3d-a63b-1ae9d92d2879
+        blueprint_uuid: 9ac96185-7625-4c7b-8061-3a1f1ca4c899
