@@ -1,6 +1,6 @@
 {
-  "_vendor-BJXiEWX0.js": {
-    "file": "assets/vendor-BJXiEWX0.js",
+  "_vendor-H6ffgKkf.js": {
+    "file": "assets/vendor-H6ffgKkf.js",
     "name": "vendor"
   },
   "assets/images/avatars/avatar-1.png": {
@@ -192,15 +192,15 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "resources/theme.ts": {
-    "file": "assets/theme-Do9fXLaw.js",
+    "file": "assets/theme-BRS3dKNb.js",
     "name": "theme",
     "src": "resources/theme.ts",
     "isEntry": true,
     "imports": [
-      "_vendor-BJXiEWX0.js"
+      "_vendor-H6ffgKkf.js"
     ],
     "css": [
-      "assets/theme-D2zV5cli.css"
+      "assets/theme-DueD5YTs.css"
     ],
     "assets": [
       "assets/logo-s3S5vjY6.svg",
