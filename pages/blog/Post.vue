@@ -91,7 +91,7 @@ import CommentList from '@/partials/blog/CommentList.vue';
 import ShareButton from '@/partials/elements/ShareButton.vue';
 import UserPanelAuthor from '@/partials/elements/UserPanelAuthor.vue';
 import GallerySlider from '@/partials/controls/GallerySlider.vue';
-import { OctoberFilter, useComponent } from '@ratmd/laika';
+import { OctoberFilter, useComponent } from '@rat.md/laika';
 import { computed } from 'vue';
 
 // Define Component

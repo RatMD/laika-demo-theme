@@ -219,7 +219,7 @@ vars[blueFooterStyle] = 1
 </style>
 
 <script lang="ts" setup>
-import { PageComponent } from '@ratmd/laika';
+import { PageComponent } from '@rat.md/laika';
 import DefaultLayout from '@/layouts/Default.vue';
 
 defineOptions({ layout: DefaultLayout, inheritAttrs: false });

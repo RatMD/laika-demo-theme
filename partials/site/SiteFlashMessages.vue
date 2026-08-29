@@ -5,5 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-import { Flash } from '@ratmd/laika';
+import { Flash } from '@rat.md/laika';
 </script>

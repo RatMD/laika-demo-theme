@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useOctober } from '@ratmd/laika';
+import { useOctober } from '@rat.md/laika';
 import { computed, useId } from 'vue';
 
 interface GalleryImage {

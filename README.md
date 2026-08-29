@@ -1,7 +1,7 @@
 LAIKA Demo Theme
 ================
 
-The defualt OctoberCMS demo theme, rewritten for [LAIKA](https://github.com/RatMD/laika-plugin).
+The default OctoberCMS demo theme, rewritten for [LAIKA](https://github.com/RatMD/laika-plugin).
 
 It demonstrates how to build an October CMS theme with Vue and Vite while continuing to use October 
 components, partials, content blocks, and other CMS features.
@@ -34,4 +34,4 @@ npm run build
 ```
 
 The LAIKA JavaScript package is installed from npm as
-[`@ratmd/laika`](https://www.npmjs.com/package/@ratmd/laika).
+[`@rat.md/laika`](https://www.npmjs.com/package/@rat.md/laika).

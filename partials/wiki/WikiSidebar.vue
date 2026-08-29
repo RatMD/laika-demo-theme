@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import WikiTocItem from '@/partials/wiki/WikiTocItem.vue';
-import { useComponent, useOctober, useRouter } from '@ratmd/laika';
+import { useComponent, useOctober, useRouter } from '@rat.md/laika';
 import { computed } from 'vue';
 
 const wiki = useComponent('wiki');

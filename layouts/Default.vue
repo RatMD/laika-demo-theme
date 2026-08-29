@@ -47,7 +47,7 @@ vars[activeNavLink] = 'home'
 </template>
 
 <script lang="ts" setup>
-import { Head } from '@ratmd/laika';
+import { Head } from '@rat.md/laika';
 import SiteFlashMessages from '@/partials/site/SiteFlashMessages.vue';
 import SiteFooter from '@/partials/site/SiteFooter.vue';
 import SiteHowItsMade from '@/partials/site/SiteHowItsMade.vue';

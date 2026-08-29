@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vue from '@vitejs/plugin-vue';
-import laika from "@ratmd/laika/vite";
+import laika from "@rat.md/laika/vite";
 import dotenv from 'dotenv';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';

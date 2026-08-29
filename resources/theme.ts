@@ -1,6 +1,6 @@
 import './styles/theme.css';
 import { createApp, h } from "vue";
-import { createLaikaApp, type ResolveResult } from "@ratmd/laika";
+import { createLaikaApp, type ResolveResult } from "@rat.md/laika";
 import DayjsDirective from "@/resources/directives/dayjs";
 
 /**

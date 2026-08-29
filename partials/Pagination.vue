@@ -64,7 +64,7 @@ export interface ComponentProps {
 </script>
 
 <script lang="ts" setup>
-import { useOctober } from '@ratmd/laika';
+import { useOctober } from '@rat.md/laika';
 import { computed } from 'vue';
 
 // Define Component

@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useOctober } from '@ratmd/laika';
+import { useOctober } from '@rat.md/laika';
 import { ref } from 'vue';
 
 withDefaults(defineProps<{ open?: boolean; message?: string }>(), {

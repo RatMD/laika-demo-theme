@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import type { Block } from '@/types';
-import { useOctober } from '@ratmd/laika';
+import { useOctober } from '@rat.md/laika';
 import { computed } from 'vue';
 
 // Define Component

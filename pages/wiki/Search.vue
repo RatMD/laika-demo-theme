@@ -54,7 +54,7 @@ vars[activeNavLink] = "wiki"
 </template>
 
 <script lang="ts" setup>
-import { Head, Link, useComponent, useOctober, useRouter } from '@ratmd/laika';
+import { Head, Link, useComponent, useOctober, useRouter } from '@rat.md/laika';
 import { computed } from 'vue';
 import DefaultLayout from '@/layouts/Default.vue';
 import Pagination from '@/partials/Pagination.vue';

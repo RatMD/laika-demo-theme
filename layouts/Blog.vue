@@ -89,7 +89,7 @@ vars[activeNavLink] = "blog"
 </template>
 
 <script lang="ts" setup>
-import { Head } from '@ratmd/laika';
+import { Head } from '@rat.md/laika';
 import SiteFlashMessages from '@/partials/site/SiteFlashMessages.vue';
 import SiteNavLinks from '@/partials/site/SiteNavLinks.vue';
 import BlogSidebar from '@/partials/blog/BlogSidebar.vue';

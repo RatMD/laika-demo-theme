@@ -19,7 +19,7 @@ layout = "Default.vue"
 </template>
 
 <script lang="ts" setup>
-import { Head } from '@ratmd/laika';
+import { Head } from '@rat.md/laika';
 import DefaultLayout from '@/layouts/Default.vue';
 
 defineOptions({ layout: DefaultLayout });

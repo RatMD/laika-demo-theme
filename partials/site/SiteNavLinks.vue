@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Link, useComponent, usePayload } from '@ratmd/laika';
+import { Link, useComponent, usePayload } from '@rat.md/laika';
 import { computed, ref, watch } from 'vue';
 
 // Composable

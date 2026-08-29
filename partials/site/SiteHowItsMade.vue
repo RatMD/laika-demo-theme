@@ -25,7 +25,7 @@ interface HowItsMadeObject {
 </script>
 
 <script lang="ts" setup>
-import { usePage } from '@ratmd/laika';
+import { usePage } from '@rat.md/laika';
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 // Composables

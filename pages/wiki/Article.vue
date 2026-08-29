@@ -56,7 +56,7 @@ import WikiLayout from '@/layouts/Wiki.vue';
 import GallerySlider from '@/partials/controls/GallerySlider.vue';
 import WikiBreadcrumb from '@/partials/wiki/WikiBreadcrumb.vue';
 import WikiContinue from '@/partials/wiki/WikiContinue.vue';
-import { useComponent } from '@ratmd/laika';
+import { useComponent } from '@rat.md/laika';
 import { computed } from 'vue';
 
 // Define Component

@@ -107,7 +107,7 @@ function onTest(): void
 </template>
 
 <script lang="ts" setup>
-import { useOctober, usePayload } from '@ratmd/laika';
+import { useOctober, usePayload } from '@rat.md/laika';
 import { computed, ref } from 'vue';
 import DefaultLayout from '@/layouts/Default.vue';
 import CalcResult from '@/partials/CalcResult.vue';

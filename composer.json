@@ -1,7 +1,7 @@
 {
-    "name": "ratmd/laika-demo-theme",
+    "name": "ratmd/laika-theme",
     "type": "october-theme",
-    "description": "Demo October CMS theme, written for LAIKA.",
+    "description": "Demo October CMS theme, rewritten for LAIKA.",
     "keywords": ["october", "cms", "demo", "theme"],
     "authors": [
         {

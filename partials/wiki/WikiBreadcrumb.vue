@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Link } from '@ratmd/laika';
+import { Link } from '@rat.md/laika';
 import { computed } from 'vue';
 
 const props = defineProps<{ article: any }>();

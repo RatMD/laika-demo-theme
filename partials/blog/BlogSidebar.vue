@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Link, usePayload } from '@ratmd/laika';
+import { Link, usePayload } from '@rat.md/laika';
 import { computed } from 'vue';
 import SocialLinks from '@/partials/elements/SocialLinks.vue';
 
