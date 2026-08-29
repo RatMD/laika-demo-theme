@@ -4,7 +4,7 @@
     right: 1.5em;
     display: grid;
     position: fixed;
-    align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     z-index: 1055;
     pointer-events: none;
