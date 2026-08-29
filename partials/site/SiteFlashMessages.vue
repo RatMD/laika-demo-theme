@@ -1,7 +1,11 @@
 <template>
-    <Flash v-slot="{ type, message }">
-        <p data-control="flash-message" :data-type="type" data-interval>{{ message }}</p>
-    </Flash>
+    <div class="laika-flash-messages" aria-live="polite" aria-atomic="true">
+        <Flash v-slot="{ type, message }">
+            <p class="laika-flash-message" :class="`is-${type}`" role="alert">
+                {{ message }}
+            </p>
+        </Flash>
+    </div>
 </template>
 
 <script lang="ts" setup>
